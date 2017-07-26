@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sign Up</title>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+
+	<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+
+<div class="col-md-6 col-md-offset-3">
+
+<form ng-app="app" ng-contoller="validateCtrl" name="form">
+	
+            <label for="username">Username:-</label>
+            <input type="text" name="user" ng-model="user" class="form-control" required />
+            <span style="color:red" ng-show="form.user.$touched && form.user.$dirty && form.user.$invalid" ng-show="form.user.$error.required">Username is required.
+            </span>
+ 
+ <br>
+
+            <label for="pass">Password:-</label>
+            <input type="password" name="pass" ng-model="pass" class="form-control" required />
+            <span style="color:red" ng-show="form.pass.$touched && form.pass.$dirty && form.pass.$invalid" ng-show="form.pass.$error.required">Password is required.
+            </span >
+ 
+<br>
+
+            <label for="email">Email</label>
+            <input type="email" name="email" ng-model="email" class="form-control" required />
+            <span style="color:red" ng-show="form.email.$touched && form.email.$dirty && form.email.$invalid" ng-show="form.email.$error.required">Email is required.
+            </span>
+<br>
+
+            <label for="phone">Phone No.</label>
+            <input type="text" name="phone" ng-model="phone" class="form-control" required />
+            <span style="color:red" ng-show="form.phone.$touched && form.phone.$dirty && form.phone.$invalid" ng-show="form.phone.$error.required">Phone No. is required.
+            </span>
+<br>
+
+<div class="form-actions">
+<button ng-disabled="form.user.$touched && form.user.$dirty && form.user.$invalid || form.pass.$touched && form.pass.$dirty && form.pass.$invalid || form.pass.$touched && form.email.$dirty && form.email.$invalid || form.pass.$touched && form.phone.$dirty && form.phone.$invalid " class="btn btn-primary">SignUp</button>
+</div>
+</form>
+</div>
+<script type="text/javascript">
+    var app = angular.module('app', []);
+    app.controller('validateCtrl', function($scope) {
+    $scope.user = 'Username';
+    $scope.pass = 'Password';
+    $scope.email = 'Email';
+    $scope.phone = 'Phone';
+});  
+</script>
+</body>
+</html>
